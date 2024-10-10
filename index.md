@@ -8,7 +8,9 @@ authors:
 affiliations:
     POSTECH
 paper: https://www.cs.virginia.edu/~robins/Turing_Paper_1936.pdf
-code: https://github.com/jaekyeongg/roi_neural_atlas
+video: https://www.youtube.com/results?search_query=turing+machine
+code: https://jaekyeongg.github.io/RNA/
+data: https://huggingface.co/docs/datasets
 ---
 
 <!-- Using HTML to center the abstract -->
