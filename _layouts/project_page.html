@@ -48,7 +48,7 @@
         <div class="column has-text-centered">
           <h1 class="title is-1 publication-title">{{ page.title }}</h1>
           {% if page.authors %}
-          <div class="is-size-5 publication-authors">
+          <div class="col-md-6 text-center">
             <span class="author-block">
               {{ page.authors }}
             </span>
@@ -77,18 +77,6 @@
                 </a>
               </span>
               {% endif %}
-              <!-- Video Link. -->
-              {% if page.video %}
-              <span class="link-block">
-                <a href="{{ page.video }}"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="fab fa-youtube"></i>
-                  </span>
-                  <span>Video</span>
-                </a>
-              </span>
-              {% endif %}
               <!-- Code Link. -->
               {% if page.code %}
               <span class="link-block">
@@ -97,20 +85,8 @@
                   <span class="icon">
                       <i class="fab fa-github"></i>
                   </span>
-                  <span>Code(Soon)</span>
+                  <span>Code (coming soon)</span>
                   </a>
-              </span>
-              {% endif %}
-              <!-- Dataset Link. -->
-              {% if page.data %}
-              <span class="link-block">
-                <a href="{{ page.data }}"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="fas fa-database"></i>
-                  </span>
-                  <span>Data</span>
-                </a>
               </span>
               {% endif %}
             </div>
