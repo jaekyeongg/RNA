@@ -2,7 +2,7 @@
 layout: project_page
 permalink: /
 
-title: On Computable Numbers, with an Application to the Entscheidungsproblem
+title: RNA: Video Editing with ROI-based Neural Atlas
 authors:
     A. M. Turing
 affiliations:
@@ -62,7 +62,7 @@ Turing's paper laid the foundation for the theory of computation and had a profo
 ## Citation
 ```
 @article{turing1936computable,
-  title={On computable numbers, with an application to the Entscheidungsproblem},
+  title={RNA: Video Editing with ROI-based Neural Atlas},
   author={Turing, Alan Mathison},
   journal={Journal of Mathematics},
   volume={58},
