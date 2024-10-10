@@ -18,19 +18,7 @@ data: https://huggingface.co/docs/datasets
     <div class="column is-four-fifths">
         <h2>Abstract</h2>
         <div class="content has-text-justified">
-The "computable" numbers may be described briefly as the real
-numbers whose expressions as a decimal are calculable by finite means.
-Although the subject of this paper is ostensibly the computable numbers.
-it is almost equally easy to define and investigate computable functions
-of an integral variable or a real or computable variable, computable
-predicates, and so forth. The fundamental problems involved are,
-however, the same in each case, and I have chosen the computable numbers
-for explicit treatment as involving the least cumbrous technique. I hope
-shortly to give an account of the relations of the computable numbers,
-functions, and so forth to one another. This will include a development
-of the theory of functions of a real variable expressed in terms of computable
-numbers. According to my definition, a number is computable
-if its decimal can be written down by a machine...
+With the recent growth of video-based Social Network Service (SNS) platforms, the demand for video editing among common users has increased. However, video editing can be challenging due to the temporally-varying factors such as camera movement and moving objects. While modern atlas-based video editing methods have addressed these issues, they often fail to edit videos including complex motion or multiple moving objects, and demand excessive computational cost, even for very simple edits. In this paper, we propose a novel region-of-interest (ROI)-based video editing framework: ROI-based Neural Atlas (RNA). Unlike prior work, RNA allows users to specify editing regions, simplifying the editing process by removing the need for foreground separation and atlas modeling for foreground objects. However, this simplification presents a unique challenge: acquiring a mask that effectively handles occlusions in the edited area caused by moving objects, without relying on an additional segmentation model. To tackle this, we propose a novel mask refinement approach designed for this specific challenge. Moreover, we introduce a soft neural atlas model for video reconstruction to ensure high-quality editing results. Extensive experiments show that RNA offers a more practical and efficient editing solution, applicable to a wider range of videos with superior quality compared to prior methods.
         </div>
     </div>
 </div>
