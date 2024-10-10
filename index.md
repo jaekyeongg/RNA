@@ -2,7 +2,7 @@
 layout: project_page
 permalink: /
 
-title: RNA: Video Editing with ROI-based Neural Atlas
+title: On Computable Numbers, with an Application to the Entscheidungsproblem
 authors:
     A. M. Turing
 affiliations:
