@@ -4,12 +4,12 @@ permalink: /
 
 title: RNA: Video Editing with ROI-based Neural Atlas
 authors:
-    Jaekyeong Lee Geonung Kim Sunghyun Cho
+    A. M. Turing
 affiliations:
-    POSTECH
+    King's College, Cambridge
 paper: https://www.cs.virginia.edu/~robins/Turing_Paper_1936.pdf
 video: https://www.youtube.com/results?search_query=turing+machine
-code: https://jaekyeongg.github.io/RNA/
+code: https://github.com/topics/turing-machines
 data: https://huggingface.co/docs/datasets
 ---
 
