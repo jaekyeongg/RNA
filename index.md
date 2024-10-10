@@ -4,7 +4,7 @@ permalink: /
 
 title: Video Editing with ROI-based Neural Atlas
 authors:
-    Jaekyeong Lee    Geonung Kim    Sunghyun Cho
+    Jaekyeong Lee&nbsp;&nbsp;&nbsp;&nbsp;Geonung Kim&nbsp;&nbsp;&nbsp;&nbsp;Sunghyun Cho
 affiliations:
     POSTECH
 paper: https://www.cs.virginia.edu/~robins/Turing_Paper_1936.pdf
