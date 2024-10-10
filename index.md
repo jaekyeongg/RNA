@@ -2,15 +2,13 @@
 layout: project_page
 permalink: /
 
-title: On Computable Numbers, with an Application to the Entscheidungsproblem
+title: RNA: Video Editing with ROI-based Neural Atlas
 authors:
-    A. M. Turing
+    Jaekyeong Lee Geonung Kim Sunghyun Cho
 affiliations:
-    King's College, Cambridge
+    POSTECH
 paper: https://www.cs.virginia.edu/~robins/Turing_Paper_1936.pdf
-video: https://www.youtube.com/results?search_query=turing+machine
-code: https://github.com/topics/turing-machines
-data: https://huggingface.co/docs/datasets
+code: https://github.com/jaekyeongg/roi_neural_atlas
 ---
 
 <!-- Using HTML to center the abstract -->
