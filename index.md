@@ -2,15 +2,13 @@
 layout: project_page
 permalink: /
 
-title: RNA:/ Video Editing with ROI-based Neural Atlas
+title: Video Editing with ROI-based Neural Atlas
 authors:
-    A. M. Turing
+    Jaekyeong Lee Geonung Kim Sunghyun Cho
 affiliations:
-    King's College, Cambridge
+    POSTECH
 paper: https://www.cs.virginia.edu/~robins/Turing_Paper_1936.pdf
-video: https://www.youtube.com/results?search_query=turing+machine
-code: https://github.com/topics/turing-machines
-data: https://huggingface.co/docs/datasets
+code: https://github.com/jaekyeongg/roi_neural_atlas
 ---
 
 <!-- Using HTML to center the abstract -->
@@ -62,7 +60,7 @@ Turing's paper laid the foundation for the theory of computation and had a profo
 ## Citation
 ```
 @article{turing1936computable,
-  title={RNA: Video Editing with ROI-based Neural Atlas},
+  title={Video Editing with ROI-based Neural Atlas},
   author={Turing, Alan Mathison},
   journal={Journal of Mathematics},
   volume={58},
