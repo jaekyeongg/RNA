@@ -2,7 +2,7 @@
 layout: project_page
 permalink: /
 
-title: Video Editing with ROI-based Neural Atlas
+title: RNA&nbsp;:&nbsp;Video Editing with ROI-based Neural Atlas
 authors:
     Jaekyeong Lee&nbsp;&nbsp;&nbsp;&nbsp;Geonung Kim&nbsp;&nbsp;&nbsp;&nbsp;Sunghyun Cho
 affiliations:
