@@ -8,7 +8,7 @@ authors:
 affiliations:
     POSTECH
 paper: https://www.cs.virginia.edu/~robins/Turing_Paper_1936.pdf
-code(soon): https://github.com/jaekyeongg/roi_neural_atlas
+code: https://github.com/jaekyeongg/roi_neural_atlas
 ---
 
 <!-- Using HTML to center the abstract -->
