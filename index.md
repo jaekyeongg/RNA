@@ -2,7 +2,7 @@
 layout: project_page
 permalink: /
 
-title: RNA':' Video Editing with ROI-based Neural Atlas
+title: RNA:/ Video Editing with ROI-based Neural Atlas
 authors:
     A. M. Turing
 affiliations:
