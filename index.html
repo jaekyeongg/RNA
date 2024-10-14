@@ -1,0 +1,215 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      
+      <title>RNA : Video Editing with ROI-based Neural Atlas</title>
+      <link href="./assets/style.css" rel="stylesheet" type="text/css">
+      <meta name="description" content="Project page for &#39;RNA : Video Editing with ROI-based Neural Atlas.&#39;">
+      <link rel="stylesheet" href="./assets/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+      <style>
+
+      </style>
+   </head>
+   <body>
+      <p class="title">RNA : Video Editing with ROI-based Neural Atlas</p>
+         <table width="999" border="0" align="center" class="menu" style="margin-bottom: 8px;">
+    <tbody>
+      <tr>
+        <td style="font-size: 17pt;" align="center">ECCV 2022 Oral</td>
+      </tr>
+    </tbody>
+  </table>
+      <p class="author">
+         <span class="author">Jaekyeong Lee<sup>*</sup></span>
+         <span class="author"><a target="_blank" href="https://kimgeonung.github.io/">Geonung Kim</a><sup>*</sup></span>
+         <span class="author"><a target="_blank" href="https://www.scho.pe.kr/">Sunghyun Cho</a></span>
+      </p>
+      <table border="0" align="center" class="affiliations" width="1200px">
+         <tbody align="center">
+            <tr>
+				<td style="text-align: right; width: 17%"></td>
+               <td style="text-align: left; width:20%; ">POSTECH</td>
+            </tr>
+         </tbody>
+      </table>  <table border="0" align="center" class="menu" style="margin-bottom: 8px;">
+         <tbody>
+            <tr>
+               <td align="center">| <a href="https://arxiv.org/abs/2410.07600">Paper</a> |  <a href="https://github.com/jaekyeongg/roi_neural_atlas">Code(coming soon)</a> | </td>
+            </tr>
+         </tbody>
+      </table>
+      <div class="container">
+        <div id="videoCarousel" class="carousel slide" data-ride="carousel" data-interval="0">
+            <div class="carousel-inner">
+               <div class="carousel-item">
+                  <video class="img-fluid" autoplay="" loop="" muted="">
+                     <source src="videos/giraffe.mp4" type="video/mp4">
+                  </video>
+               </div>
+               <div class="carousel-item">
+                  <video class="img-fluid" autoplay="" loop="" muted="">
+                     <source src="videos/blackswan.mp4" type="video/mp4">
+                  </video>
+               </div>
+               <div class="carousel-item active">
+                  <video class="img-fluid" autoplay="" loop="" muted="">
+                     <source src="videos/car-turn_samples.mp4" type="video/mp4">
+                  </video>
+               </div>
+               <div class="carousel-item">
+                  <video class="img-fluid" autoplay="" loop="" muted="">
+                     <source src="videos/libby.mp4" type="video/mp4">
+                  </video>
+               </div>
+            </div>
+            <a class="carousel-control-prev" href="https://text2live.github.io/#videoCarousel" role="button" data-slide="prev">
+               <div class="slider-navigation-previous">
+                  <svg viewBox="0 0 50 80" xml:space="preserve">
+                     <polyline fill="white" stroke-width=".5em" stroke-linecap="round" stroke-linejoin="round" points="45.63,75.8 0.375,38.087 45.63,0.375 "></polyline>
+                  </svg>
+               </div>
+               <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="https://text2live.github.io/#videoCarousel" role="button" data-slide="next">
+               <div class="slider-navigation-next">
+                  <svg viewBox="0 0 50 80" xml:space="preserve">
+                     <polyline fill="white" stroke-width=".5em" stroke-linecap="round" stroke-linejoin="round" points="0.375,0.375 45.63,38.087 0.375,75.8 "></polyline>
+                  </svg>
+               </div>
+               <span class="sr-only">Next</span>
+            </a>
+         </div>
+         &nbsp;<div align="left"><i>* Equal contribution</i></div>
+          <br>
+         <p><span class="section"><b>Abstract</b></span> </p>
+         <p> We present a method for zero-shot, text-driven appearance manipulation in natural images and videos.
+            Specifically, given an input image or video and a target text prompt, our goal is to edit the appearance of existing objects (e.g., object's texture) or augment the scene with new visual effects (e.g., smoke, fire) in a semantically meaningful manner.
+            Our framework trains a generator using an <em>internal dataset</em> of training examples, extracted from a single input (image or video and target text prompt), while leveraging an <em>external</em> pre-trained CLIP model to establish our losses.
+            Rather than directly generating the edited output, our key idea is to generate an <em>edit layer</em> (color+opacity) that is composited over the original input.
+            This allows us to constrain the generation process and maintain high fidelity to the original input via novel text-driven losses that are applied directly to the edit layer. Our method neither relies on a pre-trained generator nor requires user-provided edit masks.
+            Thus, it can perform localized, semantic edits on high-resolution natural images and videos across a variety of  objects and scenes. &nbsp;
+         </p>
+         <p class="section"><b>Semi-Transparent Effects</b></p>
+         <p style="margin-top: 0px;">
+            Text2LIVE successfully augments the input scene with complex semi-transparent effects without changing irrelevant content in the image.
+         </p>
+         <div align="center"><img style="padding: 0; display: block; margin: 0 auto; max-height: 100%; max-width: 100%;" src="./assets/semi_transparent_effects.png" alt="" width="1000"></div>
+         <div align="center" style="margin-top: 3px">
+            <video autoplay="" loop="" muted="" width="1000" style="padding: 0; display: block; margin: 0 auto; max-height: 100%; max-width: 100%;">
+               <source src="videos/car-turn_bg_edit-layer.mp4" type="video/mp4">
+            </video>
+         </div>
+         <br>
+
+          <p class="section"><b>External Coverage</b></p>
+          <p style="padding-left: 80px"><a href="https://www.youtube.com/watch?v=8U9o5aZ2y5w"><b>[Two Minute Papers]</b></a>
+        </p><table width="940" border="0">
+          <tbody>
+            <tr>
+              <td style="padding-left: 80px"><iframe width="100%" height="400px" src="./assets/8U9o5aZ2y5w.html">
+                </iframe></td>
+            </tr>
+          </tbody>
+        </table>
+        <br>
+         <p class="section" id="paper"><b>Paper</b></p>
+         <table border="0">
+            <tbody>
+               <tr>
+                  <td height="100"><a href="https://text2live.github.io/paper.pdf" target="_blank" rel="noopener noreferrer"><img src="./assets/paper_cover.png" alt="" width="140" height="167"></a></td>
+				   <td height="100">&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                  <td width="750">
+                     <p><b>Text2LIVE: Text-Driven Layered Image and Video Editing</b><br>
+                        Omer Bar-Tal<sup>*</sup>, Dolev Ofri-Amar<sup>*</sup>, Rafail Fridman<sup>*</sup>, Yoni Kasten, Tali Dekel.<br>
+                        (* indicates equal contribution)                  <br>
+                        <em>ECCV 2022 Oral.</em><br><br>
+                        [<a href="https://arxiv.org/abs/2204.02491" target="_blank" rel="noopener noreferrer">paper</a>]
+                     </p>
+                  </td>
+               </tr>
+            </tbody>
+         </table>
+         <p class="section">&nbsp;</p>
+         <p class="section" id="sm"><b>Supplementary Material</b></p>
+         <table width="587" height="136" border="0">
+            <tbody>
+               <tr>
+                  <td width="180"><img src="./assets/sm_illustration.png" alt="" height="150"></td>
+                  <td align="left">
+                     <p>[<a href="https://text2live.github.io/sm/index.html" target="_blank">supplementary page</a>]</p>
+                  </td>
+               </tr>
+            </tbody>
+         </table>
+		  <p class="section">&nbsp;</p>
+		  <p class="section" id="code"><b>Code</b></p>
+		  <table border="0">
+            <tbody>
+               <tr>
+                  <td height="50"><img src="./assets/github_logo.png" alt="" width="60" height="60"></td>
+				   <td height="100">&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                  <td width="750">
+                     <p>
+                        [<a href="https://github.com/omerbt/Text2LIVE" target="_blank" rel="noopener noreferrer">code</a>]
+                     </p>
+                  </td>
+               </tr>
+            </tbody>
+         </table>
+		  
+         <p class="section">&nbsp;</p>
+         <p class="section" id="bibtex"><b>Bibtex</b></p>
+         <pre style=" display: block;
+                  background: #eee;
+                  white-space: pre;
+                  -webkit-overflow-scrolling: touch;
+                  max-width: 100%;
+                  min-width: 100px;
+                  border-radius: 20px;
+                  padding: 0;;">
+@inproceedings{bar2022text2live,
+  title={Text2live: Text-driven layered image and video editing},
+  author={Bar-Tal, Omer and Ofri-Amar, Dolev and Fridman, Rafail and Kasten, Yoni and Dekel, Tali},
+  booktitle={European Conference on Computer Vision},
+  pages={707--723},
+  year={2022},
+  organization={Springer}
+}
+			  </pre><table border="0">
+            <tbody>
+               
+            </tbody>
+         </table>
+         <p class="section">&nbsp;</p>
+         <!--          <p>&nbsp;</p>-->
+         <p><b>Acknowledgments</b></p>
+         <p>We thank <a href="https://kfiraberman.github.io/">Kfir Aberman</a>, <a href="https://lioryariv.github.io/">Lior Yariv</a>,
+             <a href="https://www.weizmann.ac.il/math/bagon/home">Shai Bagon</a>, and <a href="https://www.linkedin.com/in/narek-tumanyan-5a3334122/"> Narek Tumanyan</a> for their insightful comments. We thank <a href="https://www.linkedin.com/in/narek-tumanyan-5a3334122/"> Narek Tumanyan</a> for his help with the baselines comparison.
+         </p>
+      </div>
+   
+   <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-WLX2Z5QLG8');
+   </script>
+   <script src="./assets/jquery.min.js.다운로드"></script>
+   <script type="text/javascript">
+      $(document).ready(function () {
+
+          if (localStorage.getItem("my_app_name_here-quote-scroll") != null) {
+              $(window).scrollTop(localStorage.getItem("my_app_name_here-quote-scroll"));
+          }
+
+          $(window).on("scroll", function() {
+              localStorage.setItem("my_app_name_here-quote-scroll", $(window).scrollTop());
+          });
+
+        });
+   </script>
+   <script src="./assets/jquery-3.2.1.slim.min.js.다운로드" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+   <script src="./assets/popper.min.js.다운로드" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+   <script src="./assets/bootstrap.min.js.다운로드" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+</body></html>
