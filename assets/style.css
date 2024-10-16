@@ -196,6 +196,7 @@ code {
  cursor:pointer;
  transition:transform .3s,opacity .3s,-webkit-transform .3s
  }
+ 
  .slider-navigation-next svg,.slider-navigation-previous svg{
  width:25%;
  background:gray
