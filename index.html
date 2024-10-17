@@ -5,22 +5,7 @@
       <link href="./assets/style.css" rel="stylesheet" type="text/css">
       <meta name="description" content="Project page for &#39;RNA : Video Editing with ROI-based Neural Atlas.&#39;">
       <link rel="stylesheet" href="./assets/bootstrap.min.css">
-      <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"/>-->
       <style>
-         /* 비디오 크기 조정 */
-         .carousel-item video {
-             width: 100%;
-             height: auto;
-         }
-         .carousel-button {
-            z-index: 1; /* carousel 버튼의 z-index */
-         }
-
-         .video-player {
-            transition: opacity 0.05s ease; /* 사라지는 시간 조정 */
-            position: relative; /* 부모 요소가 position 속성을 가질 필요가 있음 */
-            z-index: 2; /* video player의 z-index는 carousel 버튼보다 높게 설정 */
-         }
      </style>
    </head>
    <body>
@@ -52,12 +37,8 @@
             </tr>
          </tbody>
       </table>
-      <style>
-         .carousel-item {
-            height: auto; /* 동영상에 맞는 높이로 조정 */
-         }
-      </style>
-      <div class="container" style ="max-width :1100px;">
+
+      <div class="container" style ="max-width :950px;">
          <p class="section">&nbsp;</p>
          <div id="carouselExample" class="carousel slide">
             <div class="carousel-inner">
@@ -128,7 +109,7 @@
          <p><span class="section"><b>Results</b></span> </p>
          <p class="subsection"><b>Qualitative comparisons</b></p>
          <p> Comparison with prior works </p>
-         <div id="carouselExample2" class="carousel slide" style ="max-width :800px;">
+         <div id="carouselExample2" class="carousel slide" style ="max-width :600px;">
             <div class="carousel-inner">
                <div class="carousel-item active">
                   <video class="video-player" controls>
@@ -163,12 +144,17 @@
                <span class="visually-hidden">Next</span>
             </button>
          </div>
-
+         
+         <p class="subsection">&nbsp;</p>
          <p class="subsection"><b>Editing results with rendering of atlas</b></p>
+         <p class="subsection">&nbsp;</p>
+         <p class="subsection"><b>Reconstruction Quality and Efficiency</b></p>
+         <div align="center"><img style="padding: 0; display: block; margin: 0 auto; max-height: 100%; max-width: 100%;" src="./assets/qualititive.jpg" alt="" width="1200"></div>
 
          <br>
+         <p class="section">&nbsp;</p>
          <p><span class="section"><b>Ablation Study</b></span> </p>
-         <div id="carouselExample3" class="carousel slide" style ="max-width :800px;">
+         <div id="carouselExample3" class="carousel slide" style ="max-width :600px;">
             <div class="carousel-inner">
                <div class="carousel-item active">
                   <video class="video-player" controls>
@@ -217,10 +203,7 @@
          year={2024}
          }
       </div>
-      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
       <script src="./assets/bootstrap.min.js"></script>
-
       <script>
          const videoPlayer = document.querySelector('.video-player');
          videoPlayer.addEventListener('mouseover', function () {
@@ -245,8 +228,8 @@
    
          pauseVideos('#carouselExample2');
          pauseVideos('#carouselExample3');
-     </script>
-      <!--<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>-->
+      </script>
+
 
    </body>
 </html>
