@@ -38,7 +38,7 @@
          </tbody>
       </table>
 
-      <div class="container" style ="max-width :950px;">
+      <div class="container" style ="max-width :960px;">
          <p class="section">&nbsp;</p>
          <div id="carouselExample" class="carousel slide">
             <div class="carousel-inner">
@@ -146,24 +146,37 @@
          </div>
          
          <p class="subsection">&nbsp;</p>
-         <p class="subsection"><b>Editing results with rendering of atlas</b></p>
-         <p class="subsection">&nbsp;</p>
-         <p class="subsection"><b>Reconstruction Quality and Efficiency</b></p>
-         <div align="center"><img style="padding: 0; display: block; margin: 0 auto; max-height: 100%; max-width: 100%;" src="./assets/qualititive.jpg" alt="" width="1200"></div>
+         <p class="subsection"><b>Additional editing results with rendering of atlas</b></p>
+         <p style="margin-top: 0px;">
+            The rendering results of atlas exhibit the contents without occluding foreground objects. We
+            effectively utilize this property in our mask refinement and soft neural atlas model, achieving high-quality editing results.
+         </p>
 
-         <br>
-         <p class="section">&nbsp;</p>
-         <p><span class="section"><b>Ablation Study</b></span> </p>
-         <div id="carouselExample3" class="carousel slide" style ="max-width :600px;">
+         <div id="carouselExample3" class="carousel slide">
             <div class="carousel-inner">
                <div class="carousel-item active">
                   <video class="video-player" controls>
-                     <source src="videos/lucia_ablation.mp4" type="video/mp4">
+                     <source src="videos/lucia_editing.mp4" type="video/mp4">
                  </video>
                </div>
                <div class="carousel-item">
                   <video class="video-player" controls>
-                     <source src="videos/blackswan_ablation.mp4" type="video/mp4">
+                     <source src="videos/tennis_editing.mp4" type="video/mp4">
+                 </video>
+               </div>
+               <div class="carousel-item">
+                  <video class="video-player" controls>
+                     <source src="videos/swing2_editing.mp4" type="video/mp4">
+                 </video>
+               </div>
+               <div class="carousel-item">
+                  <video class="video-player" controls>
+                     <source src="videos/breakdance-flare3_editing.mp4" type="video/mp4">
+                 </video>
+               </div>
+               <div class="carousel-item">
+                  <video class="video-player" controls>
+                     <source src="videos/blackswan_editing.mp4" type="video/mp4">
                  </video>
                </div>
             </div>
@@ -176,6 +189,53 @@
                <span class="visually-hidden">Previous</span>
             </button>
             <button class="carousel-control-next" type="button" data-bs-target="#carouselExample3" data-bs-slide="next">
+               <div class="slider-navigation-next">
+                  <svg viewBox="0 0 50 80" xml:space="preserve">
+                     <polyline fill="white" stroke-width=".5em" stroke-linecap="round" stroke-linejoin="round" points="0.375,0.375 45.63,38.087 0.375,75.8 "></polyline>
+                  </svg>
+               </div>
+               <span class="visually-hidden">Next</span>
+            </button>
+         </div>
+
+
+         <p class="subsection">&nbsp;</p>
+         <p class="subsection"><b>Reconstruction Quality and Efficiency</b></p>
+         <p style="margin-top: 0px;">
+            We compare video reconstruction results of different methods on video examples with various numbers of moving objects.
+            RNA achieves comparable PSNR values to these methods with generally smaller and constant computational overload, regardless of the number of moving objects.
+         </p>
+
+         <div align="center"><img style="padding: 0; display: block; margin: 0 auto; max-height: 100%; max-width: 100%;" src="./assets/qualititive.jpg" alt="" width="1200"></div>
+
+         <br>
+         <p class="section">&nbsp;</p>
+         <p><span class="section"><b>Ablation Study</b></span> </p>
+         <p style="margin-top: 0px;">
+            We conduct an ablation study by sequentially applying our mask refinement and soft neural atlas model after atlas estimation.
+         </p>  
+         <div id="carouselExample4" class="carousel slide" style ="max-width :600px;">
+            <div class="carousel-inner">
+               <div class="carousel-item active">
+                  <video class="video-player" controls>
+                     <source src="videos/lucia_ablation.mp4" type="video/mp4">
+                 </video>
+               </div>
+               <div class="carousel-item">
+                  <video class="video-player" controls>
+                     <source src="videos/blackswan_ablation.mp4" type="video/mp4">
+                 </video>
+               </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample4" data-bs-slide="prev">
+               <div class="slider-navigation-previous">
+                  <svg viewBox="0 0 50 80" xml:space="preserve">
+                     <polyline fill="white" stroke-width=".5em" stroke-linecap="round" stroke-linejoin="round" points="45.63,75.8 0.375,38.087 45.63,0.375 "></polyline>
+                  </svg>
+               </div>
+               <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample4" data-bs-slide="next">
                <div class="slider-navigation-next">
                   <svg viewBox="0 0 50 80" xml:space="preserve">
                      <polyline fill="white" stroke-width=".5em" stroke-linecap="round" stroke-linejoin="round" points="0.375,0.375 45.63,38.087 0.375,75.8 "></polyline>
@@ -228,6 +288,7 @@
    
          pauseVideos('#carouselExample2');
          pauseVideos('#carouselExample3');
+         pauseVideos('#carouselExample4');
       </script>
 
 
