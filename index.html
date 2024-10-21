@@ -102,8 +102,8 @@
          <p>
             Overall framework of RNA. For video editing, (a) a user selects a reference frame from an input video and specifies an ROI where they want to edit. (b) For the specified
             ROI, our method estimates a 2D atlas representing its temporally-invariant appearance. (c) Then, the user edits the 2D atlas. (d) Finally, an edited video is reconstructed from the edited atlas and the input video.
-            Our ROI-based approach enables computationally-efficient and robust atlas and mask estimation, while removing the burden of users to manually specify all moving foreground objects. For high-quality video editing, we present
-            a novel mask refinement method, and a novel soft neural atlas model. RNA offers a more practical and efficient solution to video editing that is applicable to a wider range of videos.
+            Specifically, we first estimate the mappings &Mopf;, &Aopf;, &Topf;, and &Lopf; for a given video in an end-to-end supervised manner. Then, we perform an additional mask refinement process to more accurately
+            consider occlusions caused by foreground objects in motion. Following this, edited video is reconstructed using the video reconstruction method based on a novel soft neural atlas model.
          </p>
          
          <br>
