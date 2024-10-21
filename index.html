@@ -33,7 +33,7 @@
       <table border="0" align="center" class="menu" style="margin-bottom: 8px;">
          <tbody>
             <tr>
-               <td align="center">| <a href="https://arxiv.org/abs/2410.07600">Paper</a> |  <a href="https://github.com/jaekyeongg/roi-neural-atlas">Code(coming soon)</a> | </td>
+               <td align="center">| <a  style="font-weight: bold;" href="https://arxiv.org/abs/2410.07600">Paper</a> |  <a style="font-weight: bold;" href="https://github.com/jaekyeongg/roi-neural-atlas">Code (coming soon)</a> | </td>
             </tr>
          </tbody>
       </table>
@@ -99,16 +99,19 @@
          <p class="section">&nbsp;</p>
          <p><span class="section"><b>Method</b></span> </p>
          <div align="center"><img style="padding: 0; display: block; margin: 0 auto; max-height: 100%; max-width: 100%;" src="./assets/overview.png" alt="" width="1200"></div>
-         <p style="margin-top: 0px;">
+         <p>
             Overall framework of RNA. For video editing, (a) a user selects a reference frame from an input video and specifies an ROI where they want to edit. (b) For the specified
             ROI, our method estimates a 2D atlas representing its temporally-invariant appearance. (c) Then, the user edits the 2D atlas. (d) Finally, an edited video is reconstructed from the edited atlas and the input video.
+            Our ROI-based approach enables computationally-efficient and robust atlas and mask estimation, while removing the burden of users to manually specify all moving foreground objects. For high-quality video editing, we present
+            a novel mask refinement method, and a novel soft neural atlas model. RNA offers a more practical and efficient solution to video editing that is applicable to a wider range of videos.
          </p>
          
          <br>
          <p class="section">&nbsp;</p>
          <p><span class="section"><b>Results</b></span> </p>
          <p class="subsection"><b>Qualitative comparisons</b></p>
-         <p> Comparison with prior works </p>
+         <p> The prvious methods produce unnatural editing results because they fail to model foreground object atlases due to the complex relationships between foreground objects or their complex movements.
+            In contrast, RNA achieves natural video editing results in these challenging scenarios.</p>
          <div id="carouselExample2" class="carousel slide" style ="max-width :600px;">
             <div class="carousel-inner">
                <div class="carousel-item active">
@@ -147,7 +150,7 @@
          
          <p class="subsection">&nbsp;</p>
          <p class="subsection"><b>Additional editing results with rendering of atlas</b></p>
-         <p style="margin-top: 0px;">
+         <p>
             The rendering results of atlas exhibit the contents without occluding foreground objects. We
             effectively utilize this property in our mask refinement and soft neural atlas model, achieving high-quality editing results.
          </p>
@@ -201,8 +204,8 @@
 
          <p class="subsection">&nbsp;</p>
          <p class="subsection"><b>Reconstruction Quality and Efficiency</b></p>
-         <p style="margin-top: 0px;">
-            RNA achieves comparable PSNR values to these methods with generally smaller and constant computational overload, regardless of the number of moving objects.
+         <p>
+            RNA achieves comparable PSNR values to previous methods with generally smaller and constant computational overload, regardless of the number of moving objects.
          </p>
 
          <div align="center"><img style="padding: 0; display: block; margin: 0 auto; max-height: 100%; max-width: 100%;" src="./assets/quantitive.png" alt="" width="1200"></div>
@@ -210,7 +213,7 @@
          <br>
          <p class="section">&nbsp;</p>
          <p><span class="section"><b>Ablation Study</b></span> </p>
-         <p style="margin-top: 0px;">
+         <p>
             We conduct an ablation study by sequentially applying our mask refinement and soft neural atlas model after atlas estimation.
          </p>  
          <div id="carouselExample4" class="carousel slide" style ="max-width :600px;">
@@ -261,6 +264,9 @@
          journal={arXiv preprint arXiv:2410.07600},
          year={2024}
          }
+         </pre><table border="0"></table>
+         <p class="section"><b>Acknowledgements</b></p>
+         <p> The website template was borrowed from <a href="https://text2live.github.io/">Text2Live</a>. </p>  
       </div>
       <script src="./assets/bootstrap.min.js"></script>
       <script>
