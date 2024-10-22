@@ -1,0 +1,306 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+   <head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">   
+      <title>RNA : Video Editing with ROI-based Neural Atlas</title>
+      <link href="./assets/style.css" rel="stylesheet" type="text/css">
+      <meta name="description" content="Project page for &#39;RNA : Video Editing with ROI-based Neural Atlas.&#39;">
+      <link rel="stylesheet" href="./assets/bootstrap.min.css">
+      <style>
+     </style>
+   </head>
+   <body>
+      <p class="title">RNA : Video Editing with ROI-based Neural Atlas</p>
+      <table width="999" border="0" align="center" class="menu" style="margin-bottom: 8px;">
+         <tbody>
+         <tr>
+            <td style="font-size: 17pt;" align="center">ACCV 2024</td>
+         </tr>
+         </tbody>
+      </table>
+      <p class="author">
+         <span class="author">Jaekyeong Lee<sup>*</sup></span>
+         <span class="author"><a target="_blank" href="https://kimgeonung.github.io/">Geonung Kim</a><sup>*</sup></span>
+         <span class="author"><a target="_blank" href="https://www.scho.pe.kr/">Sunghyun Cho</a></span>
+      </p>
+      <table border="0" align="center" class="affiliations" width="1200px">
+         <tbody align="center">
+            <tr>
+				   <td style="text-align: right; width: 17%"></td>
+               <td style="text-align: left; width:20%; ">POSTECH</td>
+            </tr>
+         </tbody>
+      </table>  
+      <table border="0" align="center" class="menu" style="margin-bottom: 8px;">
+         <tbody>
+            <tr>
+               <td align="center">| <a  style="font-weight: bold;" href="https://arxiv.org/abs/2410.07600">Paper</a> |  <a style="font-weight: bold;" href="https://github.com/jaekyeongg/roi-neural-atlas">Code (coming soon)</a> | </td>
+            </tr>
+         </tbody>
+      </table>
+
+      <div class="container" style ="max-width :960px;">
+         <p class="section">&nbsp;</p>
+         <div id="carouselExample" class="carousel slide">
+            <div class="carousel-inner">
+               <div class="carousel-item active">
+                  <video class="img-fluid" autoplay="" loop="" muted="">
+                     <source src="videos/carousel_combined.mp4" type="video/mp4">
+                  </video>
+               </div>
+               <div class="carousel-item">
+                  <video class="img-fluid" autoplay="" loop="" muted="">
+                     <source src="videos/music-band_combined.mp4" type="video/mp4">
+                  </video>
+               </div>
+               <div class="carousel-item">
+                  <video class="img-fluid" autoplay="" loop="" muted="">
+                     <source src="videos/libby_combined.mp4" type="video/mp4">
+                  </video>
+               </div>
+               <div class="carousel-item">
+                  <video class="img-fluid" autoplay="" loop="" muted="">
+                     <source src="videos/building_combined.mp4" type="video/mp4">
+                  </video>
+               </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+               <div class="slider-navigation-previous">
+                  <svg viewBox="0 0 50 80" xml:space="preserve">
+                     <polyline fill="white" stroke-width=".5em" stroke-linecap="round" stroke-linejoin="round" points="45.63,75.8 0.375,38.087 45.63,0.375 "></polyline>
+                  </svg>
+               </div>
+               <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+               <div class="slider-navigation-next">
+                  <svg viewBox="0 0 50 80" xml:space="preserve">
+                     <polyline fill="white" stroke-width=".5em" stroke-linecap="round" stroke-linejoin="round" points="0.375,0.375 45.63,38.087 0.375,75.8 "></polyline>
+                  </svg>
+               </div>
+               <span class="visually-hidden">Next</span>
+            </button>
+         </div>
+         
+         <br>
+         <p class="section">&nbsp;</p>
+         <p><span class="section"><b>Abstract</b></span> </p>
+         <p> With the recent growth of video-based Social Network Service (SNS) platforms, the demand for video editing among common users has increased. 
+            However, video editing can be challenging due to the temporally-varying factors such as camera movement and moving objects. 
+            While modern atlas-based video editing methods have addressed these issues, they often fail to edit videos including complex motion or multiple moving objects, 
+            and demand excessive computational cost, even for very simple edits. In this paper, we propose a novel region-of-interest (ROI)-based video editing framework: 
+            ROI-based Neural Atlas (RNA). Unlike prior work, RNA allows users to specify editing regions, simplifying the editing process by removing the need for foreground 
+            separation and atlas modeling for foreground objects. However, this simplification presents a unique challenge: acquiring a mask that effectively handles occlusions 
+            in the edited area caused by moving objects, without relying on an additional segmentation model. To tackle this, we propose a novel mask refinement approach designed
+            for this specific challenge. Moreover, we introduce a soft neural atlas model for video reconstruction to ensure high-quality editing results. Extensive experiments 
+            show that RNA offers a more practical and efficient editing solution, applicable to a wider range of videos with superior quality compared to prior methods. &nbsp;
+         </p>
+         
+         <br>
+         <p class="section">&nbsp;</p>
+         <p><span class="section"><b>Method</b></span> </p>
+         <div align="center"><img style="padding: 0; display: block; margin: 0 auto; max-height: 100%; max-width: 100%;" src="./assets/overview.png" alt="" width="1200"></div>
+         <p>
+            Overall framework of RNA. For video editing, (a) a user selects a reference frame from an input video and specifies an ROI where they want to edit. (b) For the specified
+            ROI, our method estimates a 2D atlas representing its temporally-invariant appearance. (c) Then, the user edits the 2D atlas. (d) Finally, an edited video is reconstructed from the edited atlas and the input video.
+            Specifically, we first estimate the mappings &Mopf;, &Aopf;, &Topf;, and &Lopf; for a given video in an end-to-end supervised manner. Then, we perform an additional mask refinement process to more accurately
+            consider occlusions caused by foreground objects in motion. Following this, edited video is reconstructed using the video reconstruction method based on a novel soft neural atlas model.
+         </p>
+         
+         <br>
+         <p class="section">&nbsp;</p>
+         <p><span class="section"><b>Results</b></span> </p>
+         <p class="subsection"><b>Qualitative comparisons</b></p>
+         <p> The prvious methods produce unnatural editing results because they fail to model foreground object atlases due to the complex relationships between foreground objects or their complex movements.
+            In contrast, RNA achieves natural video editing results in these challenging scenarios.</p>
+         <div id="carouselExample2" class="carousel slide" style ="max-width :600px;">
+            <div class="carousel-inner">
+               <div class="carousel-item active">
+                  <video class="video-player" controls>
+                     <source src="videos/schoolgirls_comparison.mp4" type="video/mp4">
+                 </video>
+               </div>
+               <div class="carousel-item">
+                  <video class="video-player" controls>
+                     <source src="videos/dog-gooses_comparison.mp4" type="video/mp4">
+                 </video>
+               </div>
+               <div class="carousel-item">
+                  <video class="video-player" controls>
+                     <source src="videos/dogs-jump_comparison.mp4" type="video/mp4">
+                 </video>
+               </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample2" data-bs-slide="prev">
+               <div class="slider-navigation-previous">
+                  <svg viewBox="0 0 50 80" xml:space="preserve">
+                     <polyline fill="white" stroke-width=".5em" stroke-linecap="round" stroke-linejoin="round" points="45.63,75.8 0.375,38.087 45.63,0.375 "></polyline>
+                  </svg>
+               </div>
+               <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample2" data-bs-slide="next">
+               <div class="slider-navigation-next">
+                  <svg viewBox="0 0 50 80" xml:space="preserve">
+                     <polyline fill="white" stroke-width=".5em" stroke-linecap="round" stroke-linejoin="round" points="0.375,0.375 45.63,38.087 0.375,75.8 "></polyline>
+                  </svg>
+               </div>
+               <span class="visually-hidden">Next</span>
+            </button>
+         </div>
+         
+         <p class="subsection">&nbsp;</p>
+         <p class="subsection"><b>Additional editing results with rendering of atlas</b></p>
+         <p>
+            The rendering results of atlas exhibit the contents without occluding foreground objects. We
+            effectively utilize this property in our mask refinement and soft neural atlas model, achieving high-quality editing results.
+         </p>
+
+         <div id="carouselExample3" class="carousel slide">
+            <div class="carousel-inner">
+               <div class="carousel-item active">
+                  <video class="video-player" controls>
+                     <source src="videos/lucia_editing.mp4" type="video/mp4">
+                 </video>
+               </div>
+               <div class="carousel-item">
+                  <video class="video-player" controls>
+                     <source src="videos/tennis_editing.mp4" type="video/mp4">
+                 </video>
+               </div>
+               <div class="carousel-item">
+                  <video class="video-player" controls>
+                     <source src="videos/swing2_editing.mp4" type="video/mp4">
+                 </video>
+               </div>
+               <div class="carousel-item">
+                  <video class="video-player" controls>
+                     <source src="videos/breakdance-flare3_editing.mp4" type="video/mp4">
+                 </video>
+               </div>
+               <div class="carousel-item">
+                  <video class="video-player" controls>
+                     <source src="videos/motorbike_editing.mp4" type="video/mp4">
+                 </video>
+               </div>
+               <div class="carousel-item">
+                  <video class="video-player" controls>
+                     <source src="videos/blackswan_editing.mp4" type="video/mp4">
+                 </video>
+               </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample3" data-bs-slide="prev">
+               <div class="slider-navigation-previous">
+                  <svg viewBox="0 0 50 80" xml:space="preserve">
+                     <polyline fill="white" stroke-width=".5em" stroke-linecap="round" stroke-linejoin="round" points="45.63,75.8 0.375,38.087 45.63,0.375 "></polyline>
+                  </svg>
+               </div>
+               <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample3" data-bs-slide="next">
+               <div class="slider-navigation-next">
+                  <svg viewBox="0 0 50 80" xml:space="preserve">
+                     <polyline fill="white" stroke-width=".5em" stroke-linecap="round" stroke-linejoin="round" points="0.375,0.375 45.63,38.087 0.375,75.8 "></polyline>
+                  </svg>
+               </div>
+               <span class="visually-hidden">Next</span>
+            </button>
+         </div>
+
+
+         <p class="subsection">&nbsp;</p>
+         <p class="subsection"><b>Reconstruction Quality and Efficiency</b></p>
+         <p>
+            RNA achieves comparable PSNR values to previous methods with generally smaller and constant computational overload, regardless of the number of moving objects.
+         </p>
+
+         <div align="center"><img style="padding: 0; display: block; margin: 0 auto; max-height: 100%; max-width: 100%;" src="./assets/quantitive.png" alt="" width="1200"></div>
+
+         <br>
+         <p class="section">&nbsp;</p>
+         <p><span class="section"><b>Ablation Study</b></span> </p>
+         <p>
+            We conduct an ablation study by sequentially applying our mask refinement and soft neural atlas model after atlas estimation.
+         </p>  
+         <div id="carouselExample4" class="carousel slide" style ="max-width :600px;">
+            <div class="carousel-inner">
+               <div class="carousel-item active">
+                  <video class="video-player" controls>
+                     <source src="videos/lucia_ablation.mp4" type="video/mp4">
+                 </video>
+               </div>
+               <div class="carousel-item">
+                  <video class="video-player" controls>
+                     <source src="videos/blackswan_ablation.mp4" type="video/mp4">
+                 </video>
+               </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample4" data-bs-slide="prev">
+               <div class="slider-navigation-previous">
+                  <svg viewBox="0 0 50 80" xml:space="preserve">
+                     <polyline fill="white" stroke-width=".5em" stroke-linecap="round" stroke-linejoin="round" points="45.63,75.8 0.375,38.087 45.63,0.375 "></polyline>
+                  </svg>
+               </div>
+               <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample4" data-bs-slide="next">
+               <div class="slider-navigation-next">
+                  <svg viewBox="0 0 50 80" xml:space="preserve">
+                     <polyline fill="white" stroke-width=".5em" stroke-linecap="round" stroke-linejoin="round" points="0.375,0.375 45.63,38.087 0.375,75.8 "></polyline>
+                  </svg>
+               </div>
+               <span class="visually-hidden">Next</span>
+            </button>
+         </div>
+         <br>
+         <p class="section">&nbsp;</p>
+         <p class="section" id="bibtex"><b>Bibtex</b></p>
+         <pre style=" display: block;
+                  background: #eee;
+                  white-space: pre;
+                  -webkit-overflow-scrolling: touch;
+                  max-width: 100%;
+                  min-width: 100px;
+                  border-radius: 20px;
+                  padding: 0;;">
+
+         @article{lee2024rna,
+         title={RNA: Video Editing with ROI-based Neural Atlas},
+         author={Lee, Jaekyeong and Kim, Geonung and Cho, Sunghyun},
+         journal={arXiv preprint arXiv:2410.07600},
+         year={2024}
+         }
+         </pre><table border="0"></table>
+         <p class="section"><b>Acknowledgements</b></p>
+         <p> The website template was borrowed from <a href="https://text2live.github.io/">Text2Live</a>. </p>  
+      </div>
+      <script src="./assets/bootstrap.min.js"></script>
+      <script>
+         const videoPlayer = document.querySelector('.video-player');
+         videoPlayer.addEventListener('mouseover', function () {
+            videoPlayer.classList.remove('hidden'); // 마우스가 비디오 위에 있을 때 표시
+         });
+
+         videoPlayer.addEventListener('mouseout', function () {
+            setTimeout(() => {
+               videoPlayer.classList.add('hidden'); // 마우스가 벗어났을 때 숨김
+            }, 500); // 숨기는 지연 시간 (원하는 대로 조정)
+         });
+         // 슬라이드 전환 시 비디오를 자동으로 멈추게 설정
+         function pauseVideos(carouselId) {
+             document.querySelector(carouselId).addEventListener('slide.bs.carousel', function () {
+                 var videos = document.querySelectorAll(carouselId + ' .carousel-item video');
+                 videos.forEach(function (video) {
+                     video.pause(); // 슬라이드가 바뀔 때 모든 비디오 멈춤
+                     video.currentTime = 0; // 비디오를 처음으로 되돌림 (선택 사항)
+                 });
+             });
+         }
+   
+         pauseVideos('#carouselExample2');
+         pauseVideos('#carouselExample3');
+         pauseVideos('#carouselExample4');
+      </script>
+
+
+   </body>
+</html>
