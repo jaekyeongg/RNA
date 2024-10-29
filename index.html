@@ -99,10 +99,11 @@
          <p class="section">&nbsp;</p>
          <p><span class="section"><b>Method</b></span> </p>
          <div align="center"><img style="padding: 0; display: block; margin: 0 auto; max-height: 100%; max-width: 100%;" src="./assets/overview.png" alt="" width="1200"></div>
-         <p>
+         <p style="margin-top: 20px;">
             Overall framework of RNA. For video editing, (a) a user selects a reference frame from an input video and specifies an ROI where they want to edit. (b) For the specified
             ROI, our method estimates a 2D atlas representing its temporally-invariant appearance. (c) Then, the user edits the 2D atlas. (d) Finally, an edited video is reconstructed from the edited atlas and the input video.
-            Specifically, we first estimate the mappings &Mopf;, &Aopf;, &Topf;, and &Lopf; for a given video in an end-to-end supervised manner. Then, we perform an additional mask refinement process to more accurately
+            Specifically, our video editing framework has three main components: atlas estimation, mask refinement, and video reconstruction using a soft neural atlas model. 
+            we first estimate the mappings &Mopf;, &Aopf;, &Topf;, and &Lopf; for a given video in an end-to-end supervised manner. Then, we perform an additional mask refinement process to more accurately
             consider occlusions caused by foreground objects in motion. Following this, edited video is reconstructed using the video reconstruction method based on a novel soft neural atlas model.
          </p>
          
